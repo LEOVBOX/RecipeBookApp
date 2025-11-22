@@ -92,7 +92,7 @@ extension RecipeScreenPresenter: IRecipeScreenPresenter {
 
                 
                 self.viewController?.setupRightNavBarItem(
-                    buttonTitle: self.saved ? "delete" : "save",
+                    buttonTitle: self.saved ? "Delete" : "Save",
                     action: actionFunc
                 )
             }
