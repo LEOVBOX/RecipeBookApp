@@ -7,30 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B34BA0862ED04C0200C63ECC /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34BA0852ED04BEB00C63ECC /* StorageManager.swift */; };
+		B34BA0862ED04C0200C63ECC /* CoreDataStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34BA0852ED04BEB00C63ECC /* CoreDataStorageManager.swift */; };
 		B34BA09C2ED05CA500C63ECC /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34BA0992ED05CA500C63ECC /* Recipe+CoreDataClass.swift */; };
 		B34BA0A12ED063C700C63ECC /* Ingredient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34BA09F2ED063C700C63ECC /* Ingredient+CoreDataClass.swift */; };
 		B34BA0A22ED063C700C63ECC /* Ingredient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34BA0A02ED063C700C63ECC /* Ingredient+CoreDataProperties.swift */; };
 		B3A31DA42ED0BB4300F77740 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A31DA32ED0BB4300F77740 /* Recipe+CoreDataProperties.swift */; };
-		B3A31E452ED1D7EC00F77740 /* UIView+backgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A31E442ED1D7E400F77740 /* UIView+backgroundImage.swift */; };
 		B3AF429C2ECCAC620065668A /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF429B2ECCAC5E0065668A /* AppAssembly.swift */; };
-		B3AF429E2ECCBBBE0065668A /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF429D2ECCBBB70065668A /* ImageRepository.swift */; };
-		B3AF42C82ECCBF4D0065668A /* DownloadableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF42C72ECCBF410065668A /* DownloadableImageView.swift */; };
-		B3AF42CE2ECCC91C0065668A /* LoadableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AF42CD2ECCC90C0065668A /* LoadableImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B34BA0852ED04BEB00C63ECC /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		B34BA0852ED04BEB00C63ECC /* CoreDataStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorageManager.swift; sourceTree = "<group>"; };
 		B34BA0992ED05CA500C63ECC /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B34BA09F2ED063C700C63ECC /* Ingredient+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ingredient+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B34BA0A02ED063C700C63ECC /* Ingredient+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ingredient+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B382B0D42EC9C85E009DEAFB /* RecipeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A31DA32ED0BB4300F77740 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B3A31E442ED1D7E400F77740 /* UIView+backgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+backgroundImage.swift"; sourceTree = "<group>"; };
 		B3AF429B2ECCAC5E0065668A /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
-		B3AF429D2ECCBBB70065668A /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
-		B3AF42C72ECCBF410065668A /* DownloadableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadableImageView.swift; sourceTree = "<group>"; };
-		B3AF42CD2ECCC90C0065668A /* LoadableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -68,15 +60,11 @@
 		B382B0CB2EC9C85E009DEAFB = {
 			isa = PBXGroup;
 			children = (
-				B3A31E442ED1D7E400F77740 /* UIView+backgroundImage.swift */,
 				B3A31DA32ED0BB4300F77740 /* Recipe+CoreDataProperties.swift */,
 				B34BA09F2ED063C700C63ECC /* Ingredient+CoreDataClass.swift */,
 				B34BA0A02ED063C700C63ECC /* Ingredient+CoreDataProperties.swift */,
 				B34BA0992ED05CA500C63ECC /* Recipe+CoreDataClass.swift */,
-				B34BA0852ED04BEB00C63ECC /* StorageManager.swift */,
-				B3AF42CD2ECCC90C0065668A /* LoadableImageView.swift */,
-				B3AF42C72ECCBF410065668A /* DownloadableImageView.swift */,
-				B3AF429D2ECCBBB70065668A /* ImageRepository.swift */,
+				B34BA0852ED04BEB00C63ECC /* CoreDataStorageManager.swift */,
 				B3AF429B2ECCAC5E0065668A /* AppAssembly.swift */,
 				B382B0D62EC9C85E009DEAFB /* RecipeBook */,
 				B382B0D52EC9C85E009DEAFB /* Products */,
@@ -166,15 +154,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3A31DA42ED0BB4300F77740 /* Recipe+CoreDataProperties.swift in Sources */,
-				B3AF429E2ECCBBBE0065668A /* ImageRepository.swift in Sources */,
-				B3AF42CE2ECCC91C0065668A /* LoadableImageView.swift in Sources */,
-				B34BA0862ED04C0200C63ECC /* StorageManager.swift in Sources */,
+				B34BA0862ED04C0200C63ECC /* CoreDataStorageManager.swift in Sources */,
 				B3AF429C2ECCAC620065668A /* AppAssembly.swift in Sources */,
 				B34BA09C2ED05CA500C63ECC /* Recipe+CoreDataClass.swift in Sources */,
 				B34BA0A12ED063C700C63ECC /* Ingredient+CoreDataClass.swift in Sources */,
 				B34BA0A22ED063C700C63ECC /* Ingredient+CoreDataProperties.swift in Sources */,
-				B3AF42C82ECCBF4D0065668A /* DownloadableImageView.swift in Sources */,
-				B3A31E452ED1D7EC00F77740 /* UIView+backgroundImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

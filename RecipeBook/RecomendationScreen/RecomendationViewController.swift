@@ -14,6 +14,7 @@ protocol IRecomendationViewController: AnyObject {
 final class RecomendationViewController: UIViewController, IRecomendationViewController {
     private let contentView: IRecipeCollectionView
     private let presenter: IRecomendationPresenter
+    private lazy var noConnectionView = NoConnectionView()
     
     struct Dependencies {
         let view: IRecipeCollectionView
@@ -40,6 +41,7 @@ final class RecomendationViewController: UIViewController, IRecomendationViewCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         presenter.viewDidLoad()
     }
 }

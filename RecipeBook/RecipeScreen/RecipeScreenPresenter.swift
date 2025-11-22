@@ -63,7 +63,7 @@ extension RecipeScreenPresenter: IRecipeScreenPresenter {
                         RecipeViewModel.IngredientViewModel(
                             name: $0.name,
                             measurement: $0.measure,
-                            imageURL: RecipeViewModel.getIngredientEndpoint(for: $0.name) ?? ""
+                            imageURL: getIngredientEndpoint(for: $0.name) ?? ""
                         )
                     }
                 

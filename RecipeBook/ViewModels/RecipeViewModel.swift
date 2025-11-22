@@ -19,12 +19,3 @@ struct RecipeViewModel {
     var ingredients: [IngredientViewModel]
 }
 
-extension RecipeViewModel {
-    static func getIngredientEndpoint(for ingredientName: String?) -> String? {
-        guard let ingredientName else {
-            return nil
-        }
-        return "https://www.themealdb.com/images/ingredients/\(ingredientName)-small.png"
-    }
-}
-

@@ -62,20 +62,16 @@ extension RecomendationPresenter: IRecomendationPresenter {
     
     func viewDidLoad() {
         interactor.getNewRandomMeals { [weak self] mealsModels in
-            let mealsViewModels = mealsModels
-                .map { meal in
-                    return MealViewModel(
-                        id: meal.idMeal,
-                        name: meal.strMeal ?? "",
-                        imageURL: meal.strMealThumb
-                    )
-                }
+            let vm = mealsModels.map {
+                MealViewModel(id: $0.idMeal, name: $0.strMeal ?? "", imageURL: $0.strMealThumb)
+            }
             
             DispatchQueue.main.async {
-                self?.view?.configure(recipes: mealsViewModels)
+                self?.view?.configure(recipes: vm)
             }
         }
     }
+
     
     func attachView(view: IRecipeCollectionView, controller: IRecomendationViewController) {
         self.view = view

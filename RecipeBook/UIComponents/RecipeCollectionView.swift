@@ -23,6 +23,7 @@ final class RecipeCollectionView: UIView {
     private var recipes: [MealViewModel] = []
     private let presenter: IRecipeCollectionPresenter
     private let cell: IRecipeViewCell.Type
+    private let noConnectionView = NoConnectionView()
     
     var onRecipeTapped: ((String) -> Void)?
     
@@ -66,7 +67,6 @@ final class RecipeCollectionView: UIView {
         setupCollectionView()
     }
     
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -109,7 +109,7 @@ extension RecipeCollectionView: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard downloadable == true else { return }
+        guard downloadable == true && !recipes.isEmpty else { return }
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         let frameHeight = scrollView.frame.height
@@ -161,6 +161,35 @@ extension RecipeCollectionView: IRecipeCollectionView {
     
     func configure(recipes: [MealViewModel]) {
         self.recipes = recipes
+        if (recipes.isEmpty && downloadable) {
+            showNoConnectionView()
+        }
         collectionView.reloadData()
+    }
+}
+
+private extension RecipeCollectionView {
+    @objc private func retryTapped() {
+        hideNoConnectionView()
+        presenter.viewDidLoad()
+    }
+    
+    func showNoConnectionView() {
+        noConnectionView.retryButton.addTarget(self, action: #selector(retryTapped), for: .touchUpInside)
+        collectionView.isHidden = true
+        addSubview(noConnectionView)
+        noConnectionView.backgroundColor = .clear
+        noConnectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            noConnectionView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            noConnectionView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            noConnectionView.heightAnchor.constraint(equalToConstant: 100),
+            noConnectionView.widthAnchor.constraint(equalToConstant: 300)
+        ])
+    }
+    
+    func hideNoConnectionView() {
+        noConnectionView.removeFromSuperview()
+        collectionView.isHidden = false
     }
 }

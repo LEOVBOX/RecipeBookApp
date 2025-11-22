@@ -31,9 +31,28 @@ final class TabBarViewController: UITabBarController, ITabBarView {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
+        configureTabBarAppearance()
     }
 
     func setTabs(_ viewControllers: [UIViewController]) {
         self.viewControllers = viewControllers
+    }
+    
+    private func configureTabBarAppearance() {
+        let appearance = UITabBarAppearance()
+        appearance.configureWithTransparentBackground()
+
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = tabBar.bounds
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        tabBar.insertSubview(blurView, at: 0)
+        appearance.backgroundColor = UIColor.systemBackground.withAlphaComponent(0.2)
+
+        tabBar.standardAppearance = appearance
+        if #available(iOS 15.0, *) {
+            tabBar.scrollEdgeAppearance = appearance
+        }
     }
 }

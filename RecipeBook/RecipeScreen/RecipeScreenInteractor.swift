@@ -57,7 +57,7 @@ extension RecipeScreenInteractor: IRecipeScreenInteractor {
         }
         imageRepository?.saveImage(url: thumbnail)
         for ingredient in mealDetails.ingredients {
-            guard let endpoint = RecipeViewModel.getIngredientEndpoint(for: ingredient.name) else { return }
+            guard let endpoint = getIngredientEndpoint(for: ingredient.name) else { return }
             imageRepository?.saveImage(url: endpoint)
         }
         completion()
