@@ -46,7 +46,7 @@ final class RecipeCollectionView: UIView {
         }
         
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.backgroundColor = Constants.backgroundColor
+        collection.backgroundColor = .clear
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
     }()
@@ -72,6 +72,8 @@ final class RecipeCollectionView: UIView {
     }
     
     private func setupUI() {
+        setupBackground()
+        
         addSubview(collectionView)
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor),

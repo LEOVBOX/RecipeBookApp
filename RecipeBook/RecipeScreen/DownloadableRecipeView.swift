@@ -83,7 +83,8 @@ final class DownloadableRecipeView: UIView {
 
 private extension DownloadableRecipeView {
     func setupUI() {
-        backgroundColor = .systemBackground
+        setupBackground()
+        
         addSubview(scrollView)
         scrollView.addSubview(imageView)
         scrollView.addSubview(descriptionStack)

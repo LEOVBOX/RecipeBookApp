@@ -33,7 +33,7 @@ final class IngredientsCollectionView: UIView {
         layout.sectionInset = Constants.sectionInsets
         
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.backgroundColor = Constants.backgroundColor
+        collection.backgroundColor = .clear
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.isScrollEnabled = false
         collection.register(DownloadableIngredientViewCell.self, forCellWithReuseIdentifier: DownloadableIngredientViewCell.identifier)

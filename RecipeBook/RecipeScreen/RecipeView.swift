@@ -80,7 +80,8 @@ final class RecipeView: UIView {
 
 private extension RecipeView {
     func setupUI() {
-        backgroundColor = .systemBackground
+        setupBackground()
+        
         addSubview(scrollView)
         scrollView.addSubview(imageView)
         scrollView.addSubview(descriptionStack)
@@ -90,6 +91,7 @@ private extension RecipeView {
     }
     
     func setConstraints() {
+        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),

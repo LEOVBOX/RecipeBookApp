@@ -15,4 +15,8 @@ class AppAssembly {
         let context = appDelegate.persistentContainer.viewContext
         return StorageManager(mainContext: context)
     }
+    
+    static func getBackgroundImgae() -> UIImage? {
+        UIImage(named: "Background")
+    }
 }
